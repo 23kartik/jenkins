@@ -10,7 +10,14 @@ pipeline {
         }
       }
     }
-    
+    stage('Build') {
+      steps {
+        script {
+          sh 'npm start'
+          sh 'npm pack'
+        }
+      }
+    }
     stage('Test') {
       steps {
         script {
@@ -23,14 +30,7 @@ pipeline {
         }
       }
     }
-    stage('Build') {
-      steps {
-        script {
-          sh 'npm start'
-          sh 'npm pack'
-        }
-      }
-    }
+    
     stage('Deploy') {
       when {
         expression {
