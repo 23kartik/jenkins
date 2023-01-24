@@ -20,12 +20,12 @@
     "web-vitals": "^0.2.4"
   },
   "scripts": {
-    "start": "webpack",
+    "start": "react-scripts --openssl-legacy-provider start",
     "postbuild": "rimraf build/**/*.map",
-    "test": "react-scripts test --env=jsdom",
-    "coverage:dev": "react-scripts test --coverage --watchAll",
-    "coverage:prod": "react-scripts test --coverage",
-    "eject": "react-scripts eject"
+    "test": "react-scripts --openssl-legacy-provider test --env=jsdom",
+    "coverage:dev": "react-scripts --openssl-legacy-provider test --coverage --watchAll",
+    "coverage:prod": "react-scripts --openssl-legacy-provider test --coverage",
+    "eject": "react-scripts --openssl-legacy-provider eject"
   },
   "jest": {
     "collectCoverageFrom": [
