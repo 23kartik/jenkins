@@ -31,19 +31,7 @@ pipeline {
       }
     }
     
-    stage('Deploy') {
-      when {
-        expression {
-          currentBuild.result == null || currentBuild.result == 'SUCCESS'
-        }
-      }
-      steps {
-        script {
-          def server = Artifactory.server 'money-web-app'
-          uploadArtifact(server)
-        }
-      }
-    }
+    
   }
 }
 def uploadArtifact(server) {
