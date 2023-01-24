@@ -39,7 +39,7 @@ pipeline {
       }
       steps {
         script {
-          def server = Artifactory.server 'My_Artifactory'
+          def server = Artifactory.server 'money-web-app'
           uploadArtifact(server)
         }
       }
