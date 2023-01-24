@@ -6,11 +6,11 @@ import { incomeCategories, expenseCategories, resetCategories } from './constant
 const useTransactions = (title) => {
   resetCategories();
   const { transactions } = useContext(ExpenseTrackerContext);
-  const rightTransactions = transactions.filter((t) => t.type === title);
-  const total = rightTransactions.reduce((acc, currVal) => acc += currVal.amount, 0);
+  const rightTransactions = transactions?.filter((t) => t.type === title);
+  const total = rightTransactions?.reduce((acc, currVal) => acc += currVal.amount, 0);
   const categories = title === 'Income' ? incomeCategories : expenseCategories;
 
-  rightTransactions.forEach((t) => {
+  rightTransactions?.forEach((t) => {
     const category = categories.find((c) => c.type === t.category);
 
     if (category) category.amount += t.amount;
